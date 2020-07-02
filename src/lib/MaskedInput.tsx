@@ -9,6 +9,7 @@ export type MaskedInputProps = InputProps & {
   formatCharacters?: object;
   placeholderChar?: string;
   value?: string;
+  isRevealingMask?: boolean;
 };
 
 type TChangeEvent = ChangeEvent<HTMLInputElement>;
@@ -25,7 +26,8 @@ export default class MaskedInput extends Component<MaskedInputProps> {
     let options: any = {
       pattern: this.props.mask,
       value: this.props.value,
-      formatCharacters: this.props.formatCharacters
+      formatCharacters: this.props.formatCharacters,
+      isRevealingMask: this.props.isRevealingMask
     };
 
     if (this.props.placeholderChar) {
